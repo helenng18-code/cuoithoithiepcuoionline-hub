@@ -24,6 +24,7 @@
       align-items: center;
       padding: 20px;
       box-sizing: border-box;
+      animation: fadeIn 2s ease forwards;
     }
     h2 {
       font-size: 16px;
@@ -38,32 +39,32 @@
     .main-button-wrapper {
       position: relative;
       display: inline-block;
-      animation: zoomIn 0.8s ease forwards, pulseShadow 2s infinite ease-in-out;
       margin-bottom: 40px;
-      background: none; /* Xoá nền lỗi */
-      border: none; /* Xoá viền */
+      background: none;
+      border: none;
+      box-shadow: none;
     }
     .main-button {
       display: inline-block;
       background: rgba(255, 255, 255, 0.9);
-      padding: 18px 36px;
+      padding: 20px 40px;
       border-radius: 50px;
       font-size: 18px;
       text-decoration: none;
       color: #000;
       font-weight: 400;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(8px);
       transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       line-height: 1.6;
-      border: none; /* Xóa viền */
+    }
+    .main-button span.bold {
+      font-weight: 700;
     }
     .main-button:hover {
       transform: scale(1.05);
       filter: brightness(1.05);
-    }
-    .main-button span.bold {
-      font-weight: 700;
     }
     .small-text {
       font-size: 16px;
@@ -98,7 +99,7 @@
       transition: all 0.3s ease;
       margin-top: 20px;
       line-height: 1.5;
-      border: none; /* Xóa viền */
+      border: none;
     }
     .copy-button b {
       font-weight: 700;
@@ -108,27 +109,10 @@
       background: #f0f0f0;
     }
 
-    @keyframes zoomIn {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    @keyframes pulseShadow {
-      0% {
-        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(251, 180, 180, 0.8);
-      }
-      100% {
-        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
-      }
+    /* Hiệu ứng fade in */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
