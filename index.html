@@ -40,6 +40,7 @@
       display: inline-block;
       animation: zoomIn 0.8s ease forwards, pulseShadow 2s infinite ease-in-out;
       margin-bottom: 40px;
+      background: none; /* Xóa nền bị dư viền */
     }
     .main-button {
       display: inline-block;
@@ -55,6 +56,8 @@
       transition: all 0.3s ease;
       line-height: 1.6;
       border: none;
+      position: relative;
+      z-index: 2;
     }
     .main-button:hover {
       transform: scale(1.05);
@@ -68,8 +71,9 @@
       right: -30px;
       top: 50%;
       transform: translateY(-50%);
-      width: 36px;
-      height: auto;
+      width: 30px;
+      height: 30px;
+      z-index: 3;
     }
     .small-text {
       font-size: 16px;
@@ -150,7 +154,8 @@
     <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
       TẠO THIỆP<br><span class="bold">MIỄN PHÍ</span> NGAY
     </a>
-    <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" class="icon-cursor" alt="Cursor Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/1827/1827933.png" class="icon-cursor" alt="Cursor Icon">
+    <!-- Link icon chuột bạn yêu cầu -->
   </div>
 
   <p class="small-text">
