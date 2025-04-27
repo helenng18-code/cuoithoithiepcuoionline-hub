@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cưới Thôi Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Lora', serif;
       background: url('background.png') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
-      background-position: center;
       text-align: center;
-      color: #333;
+      color: white;
     }
     .container {
       min-height: 100vh;
@@ -26,38 +26,41 @@
       box-sizing: border-box;
     }
     h2 {
-      font-size: 22px;
+      font-size: 12px;
       margin-bottom: 10px;
+      font-weight: 400;
     }
     h1 {
-      font-size: 48px;
-      margin-bottom: 40px;
+      font-size: 38px;
+      margin-bottom: 30px;
+      font-weight: 700;
     }
     .main-button-wrapper {
       position: relative;
       display: inline-block;
       animation: zoomIn 0.8s ease forwards, pulseShadow 2s infinite ease-in-out;
+      margin-bottom: 40px;
     }
     .main-button {
       display: inline-block;
       background: rgba(255, 255, 255, 0.9);
       padding: 18px 36px;
       border-radius: 50px;
-      font-size: 24px;
+      font-size: 14px;
       text-decoration: none;
-      font-family: 'Georgia', serif;
       color: #000;
-      font-weight: 600;
+      font-weight: 400;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       transition: all 0.3s ease;
+      line-height: 1.6;
     }
     .main-button:hover {
       transform: scale(1.05);
       filter: brightness(1.05);
     }
     .main-button span.bold {
-      font-weight: 900;
+      font-weight: 700;
     }
     .icon-cursor {
       position: absolute;
@@ -68,17 +71,20 @@
       height: auto;
     }
     .small-text {
-      font-family: 'Georgia', serif;
-      font-size: 18px;
-      margin-top: 40px;
+      font-size: 12px;
+      margin-top: 20px;
       margin-bottom: 10px;
-      color: #555;
+      color: white;
+      line-height: 1.5;
+    }
+    .small-text b {
+      font-weight: 700;
     }
     .link {
-      font-family: 'Georgia', serif;
-      font-size: 18px;
+      font-size: 16px;
       color: white;
       text-decoration: underline;
+      margin-top: 10px;
       margin-bottom: 20px;
       display: block;
     }
@@ -86,16 +92,20 @@
       display: inline-block;
       background: white;
       color: black;
-      font-family: 'Georgia', serif;
-      font-weight: bold;
+      font-family: 'Lora', serif;
+      font-weight: 400;
       padding: 12px 25px;
       border-radius: 40px;
-      font-size: 16px;
+      font-size: 8px;
       text-decoration: none;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
       margin-top: 20px;
+      line-height: 1.5;
+    }
+    .copy-button b {
+      font-weight: 700;
     }
     .copy-button:hover {
       transform: scale(1.05);
@@ -136,18 +146,20 @@
 
   <div class="main-button-wrapper">
     <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
-      TẠO THIỆP <span class="bold">MIỄN PHÍ</span> NGAY
+      TẠO THIỆP<br><span class="bold">MIỄN PHÍ</span> NGAY
     </a>
     <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" class="icon-cursor" alt="Cursor Icon">
   </div>
 
   <p class="small-text">
-    <b>Nhấn sao chép</b> dưới đây để mở website Cưới Thôi ngoài TikTok!
+    <b>Nhấn sao chép</b> dưới đây để mở<br>website Cưới Thôi ngoài TikTok!
   </p>
 
   <p class="link" id="copyText">http://cuoithoi.com.vn</p>
 
-  <button class="copy-button" onclick="copyLink()">SAO CHÉP LINK rồi dán vào trình duyệt KHÁC để mở!</button>
+  <button class="copy-button" onclick="copyLink()">
+    <b>SAO CHÉP LINK</b><br>rồi dán vào trình duyệt KHÁC để mở!
+  </button>
 
 </div>
 
@@ -164,4 +176,3 @@ function copyLink() {
 
 </body>
 </html>
-
