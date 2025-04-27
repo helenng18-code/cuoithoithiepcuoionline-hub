@@ -29,21 +29,17 @@
       font-size: 16px;
       margin-bottom: 10px;
       font-weight: 400;
-      animation: fadeInMove 1s ease forwards;
     }
     h1 {
       font-size: 48px;
       margin-bottom: 30px;
       font-weight: 700;
-      animation: fadeInMove 1s ease forwards;
-      animation-delay: 0.3s;
     }
     .main-button-wrapper {
       position: relative;
       display: inline-block;
+      animation: zoomIn 0.8s ease forwards, pulseShadow 2s infinite ease-in-out;
       margin-bottom: 40px;
-      animation: fadeInMove 1s ease forwards;
-      animation-delay: 0.6s;
     }
     .main-button {
       display: inline-block;
@@ -69,10 +65,10 @@
     }
     .icon-cursor {
       position: absolute;
-      right: -40px;
+      right: -30px;
       top: 50%;
       transform: translateY(-50%);
-      width: 30px;
+      width: 36px;
       height: auto;
     }
     .small-text {
@@ -81,8 +77,6 @@
       margin-bottom: 10px;
       color: white;
       line-height: 1.5;
-      animation: fadeInMove 1s ease forwards;
-      animation-delay: 0.9s;
     }
     .small-text b {
       font-weight: 700;
@@ -94,14 +88,9 @@
       margin-top: 10px;
       margin-bottom: 20px;
       display: block;
-      animation: fadeInMove 1s ease forwards;
-      animation-delay: 1.1s;
     }
     .copy-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      display: inline-block;
       background: white;
       color: black;
       font-family: 'Lora', serif;
@@ -116,41 +105,52 @@
       margin-top: 20px;
       line-height: 1.5;
       border: none;
-      animation: fadeInMove 1s ease forwards;
-      animation-delay: 1.4s;
+    }
+    .copy-button b {
+      font-weight: 700;
     }
     .copy-button:hover {
       transform: scale(1.05);
       background: #f0f0f0;
     }
-    .copy-icon {
-      width: 18px;
-      height: auto;
-    }
-    @keyframes fadeInMove {
+
+    @keyframes zoomIn {
       0% {
+        transform: scale(0.8);
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
       }
       100% {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes pulseShadow {
+      0% {
+        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(251, 180, 180, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
       }
     }
   </style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <h2>CHÀO MỾng BẠN ĐẾN VỜI</h2>
-  <h1>CƯỜi THÔI</h1>
+  <h2>CHÀO MỪNG BẠN ĐẾN VỚI</h2>
+  <h1>CƯỚI THÔI</h1>
 
   <div class="main-button-wrapper">
     <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
       TẠO THIỆP<br><span class="bold">MIỄN PHÍ</span> NGAY
     </a>
-    <img src="your-mouse-icon.png" class="icon-cursor" alt="Cursor Icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" class="icon-cursor" alt="Cursor Icon">
   </div>
 
   <p class="small-text">
@@ -160,10 +160,7 @@
   <p class="link" id="copyText">http://cuoithoi.com.vn</p>
 
   <button class="copy-button" onclick="copyLink()">
-    <img src="your-copy-icon.png" class="copy-icon" alt="Copy Icon">
-    <div style="text-align:left;">
-      <b>SAO CHÉP LINK</b><br>rồi dán vào trình duyệt KHÁC để mở!
-    </div>
+    <b>SAO CHÉP LINK</b><br>rồi dán vào trình duyệt KHÁC để mở!
   </button>
 
 </div>
