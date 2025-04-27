@@ -8,21 +8,21 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Georgia', serif;
       background: url('background.png') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
+      background-position: center;
       text-align: center;
       color: #333;
     }
     .container {
-      background: rgba(255, 255, 255, 0.85); /* Nền trắng mờ để nội dung dễ đọc */
-      padding: 40px 20px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
       box-sizing: border-box;
     }
     h2 {
@@ -31,51 +31,98 @@
     }
     h1 {
       font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    .main-button-wrapper {
+      position: relative;
+      display: inline-block;
+      animation: zoomIn 0.8s ease forwards, pulseShadow 2s infinite ease-in-out;
     }
     .main-button {
       display: inline-block;
-      background: #ff7b54;
-      color: white;
-      font-weight: bold;
-      padding: 15px 30px;
-      border-radius: 30px;
-      margin: 20px 0;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 18px 36px;
+      border-radius: 50px;
+      font-size: 24px;
       text-decoration: none;
-      font-size: 18px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      font-family: 'Georgia', serif;
+      color: #000;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
     }
     .main-button:hover {
-      background: #ff5722;
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+    .main-button span.bold {
+      font-weight: 900;
+    }
+    .icon-cursor {
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: auto;
     }
     .small-text {
-      font-size: 16px;
-      margin-top: 30px;
+      font-family: 'Georgia', serif;
+      font-size: 18px;
+      margin-top: 40px;
       margin-bottom: 10px;
       color: #555;
     }
     .link {
+      font-family: 'Georgia', serif;
       font-size: 18px;
-      color: #333;
+      color: white;
       text-decoration: underline;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       display: block;
     }
     .copy-button {
       display: inline-block;
-      background: #333;
-      color: white;
+      background: white;
+      color: black;
+      font-family: 'Georgia', serif;
       font-weight: bold;
       padding: 12px 25px;
-      border-radius: 30px;
-      margin-top: 20px;
+      border-radius: 40px;
       font-size: 16px;
       text-decoration: none;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      margin-top: 20px;
     }
     .copy-button:hover {
-      background: #555;
+      transform: scale(1.05);
+      background: #f0f0f0;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulseShadow {
+      0% {
+        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(251, 180, 180, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(251, 180, 180, 0.5);
+      }
     }
   </style>
 </head>
@@ -87,11 +134,16 @@
   <h2>CHÀO MỪNG BẠN ĐẾN VỚI</h2>
   <h1>CƯỚI THÔI</h1>
 
-  <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
-    TẠO THIỆP MIỄN PHÍ NGAY
-  </a>
+  <div class="main-button-wrapper">
+    <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
+      TẠO THIỆP <span class="bold">MIỄN PHÍ</span> NGAY
+    </a>
+    <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" class="icon-cursor" alt="Cursor Icon">
+  </div>
 
-  <p class="small-text">Nhấn sao chép dưới đây để mở website Cưới Thôi ngoài TikTok!</p>
+  <p class="small-text">
+    <b>Nhấn sao chép</b> dưới đây để mở website Cưới Thôi ngoài TikTok!
+  </p>
 
   <p class="link" id="copyText">http://cuoithoi.com.vn</p>
 
@@ -112,3 +164,4 @@ function copyLink() {
 
 </body>
 </html>
+
