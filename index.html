@@ -9,20 +9,20 @@
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background: url('your-background-image-url.png') no-repeat center center;
-      background-size: cover;
+      background: #fff8f0;
       text-align: center;
-      color: white;
+      color: #333;
     }
-    .overlay {
-      background: rgba(0, 0, 0, 0.5); /* soft dark overlay */
-      min-height: 100vh;
+    .container {
       padding: 40px 20px;
-      box-sizing: border-box;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     h2 {
-      font-size: 20px;
-      margin-top: 40px;
+      font-size: 22px;
       margin-bottom: 10px;
     }
     h1 {
@@ -32,64 +32,79 @@
     }
     .main-button {
       display: inline-block;
-      background: white;
-      color: black;
+      background: #ff7b54;
+      color: white;
       font-weight: bold;
       padding: 15px 30px;
       border-radius: 30px;
-      margin-bottom: 30px;
+      margin: 20px 0;
       text-decoration: none;
       font-size: 18px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
     .main-button:hover {
-      background: #f0f0f0;
+      background: #ff5722;
     }
     .small-text {
       font-size: 16px;
+      margin-top: 30px;
       margin-bottom: 10px;
-      color: #eee;
+      color: #555;
     }
     .link {
       font-size: 18px;
-      color: white;
+      color: #333;
       text-decoration: underline;
       margin-bottom: 30px;
       display: block;
     }
     .copy-button {
       display: inline-block;
-      background: white;
-      color: black;
+      background: #333;
+      color: white;
       font-weight: bold;
       padding: 12px 25px;
       border-radius: 30px;
       margin-top: 20px;
       font-size: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       text-decoration: none;
+      cursor: pointer;
     }
     .copy-button:hover {
-      background: #f0f0f0;
+      background: #555;
     }
   </style>
 </head>
+
 <body>
 
-<div class="overlay">
-  
+<div class="container">
+
   <h2>CHÀO MỪNG BẠN ĐẾN VỚI</h2>
   <h1>CƯỚI THÔI</h1>
 
-  <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">TẠO THIỆP MIỄN PHÍ NGAY</a>
+  <a href="https://cuoithoi.com.vn" class="main-button" target="_blank">
+    TẠO THIỆP MIỄN PHÍ NGAY
+  </a>
 
   <p class="small-text">Nhấn sao chép dưới đây để mở website Cưới Thôi ngoài TikTok!</p>
 
-  <a href="http://cuoithoi.com.vn" class="link" target="_blank">http://cuoithoi.com.vn</a>
+  <p class="link" id="copyText">http://cuoithoi.com.vn</p>
 
-  <a href="http://cuoithoi.com.vn" class="copy-button" target="_blank">SAO CHÉP LINK rồi dán vào trình duyệt KHÁC để mở!</a>
+  <button class="copy-button" onclick="copyLink()">SAO CHÉP LINK rồi dán vào trình duyệt KHÁC để mở!</button>
 
 </div>
+
+<script>
+function copyLink() {
+  var text = document.getElementById("copyText").innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    alert("Đã sao chép link thành công!");
+  }, function(err) {
+    alert("Lỗi sao chép link: ", err);
+  });
+}
+</script>
 
 </body>
 </html>
